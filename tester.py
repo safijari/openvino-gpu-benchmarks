@@ -20,7 +20,7 @@ def main():
         for i in range(100):
             dummy_data = np.random.rand(*shape)
             res = model([dummy_data])
-        print(f"Time taken for 100 runs: {time.time() - start}")
+        print(f"Time taken for 100 runs: {time.time() - start}, FPS is {100/(time.time() - start)}")
 
 
 if __name__ == "__main__":
