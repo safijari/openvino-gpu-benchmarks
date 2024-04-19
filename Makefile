@@ -10,6 +10,6 @@ test-gpu: container
 shell: container
 	$(CMD) bash
 
+# make tester MODEL_PATH=<path to onnx file>
 tester: container
-	# $(CMD_PRE) -v $(MODEL_PATH):/model -v `pwd`:/code $(CMD_POST) python3 /code/tester.py
-	$(CMD_PRE) -v $(MODEL_PATH):/model -v `pwd`:/code $(CMD_POST) bash
+	$(CMD_PRE) -v $(MODEL_PATH):/model -v `pwd`:/code $(CMD_POST) python3 /code/tester.py

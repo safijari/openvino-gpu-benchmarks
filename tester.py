@@ -2,6 +2,7 @@ import numpy as np
 from openvino import Core
 import time
 
+
 def main():
     ie = Core()
     devices = ie.available_devices
@@ -14,12 +15,13 @@ def main():
 
     shape = [s for s in ii.shape]
 
-    dummy_data = np.random.rand(*shape)
+    while True:
+        start = time.time()
+        for i in range(100):
+            dummy_data = np.random.rand(*shape)
+            res = model([dummy_data])
+        print(f"Time taken for 100 runs: {time.time() - start}")
 
-    start = time.time()
-    for i in range(100):
-        res = model([dummy_data])
-    print(f"Time taken for 100 runs: {time.time() - start}")
 
 if __name__ == "__main__":
     main()
