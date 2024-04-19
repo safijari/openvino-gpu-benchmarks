@@ -19,3 +19,5 @@ run wget https://github.com/intel/compute-runtime/releases/download/24.09.28717.
 run dpkg -i *.deb
 
 run pip install "openvino-dev>=2023.1.0"
+
+run apt install intel-gpu-tools -y
